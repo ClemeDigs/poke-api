@@ -1,0 +1,38 @@
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    padding: 1rem;
+    background-color: white;
+    width: 60%;
+    height: 60%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.sprites {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weight-height {
+    display: flex;
+    gap: 3rem;
+}
