@@ -51,6 +51,12 @@ if (pagerHtml) {
                 console.log(data);
 
                 // Boucle pour les images
+                const criesEntries = Object.values(data.cries).filter(cry => typeof cry === 'string' && cry);
+                const criesHtml = criesEntries.map(cry => {
+                    return `<li><audio controls src="${cry}""></li>`;
+                }).join('');
+
+                // Boucle pour les cris
                 const spriteEntries = Object.values(data.sprites).filter(sprite => typeof sprite === 'string' && sprite);
                 const spritesHtml = spriteEntries.map(sprite => {
                     return `<li><img src="${sprite}" alt="${data.name} sprite"></li>`;
@@ -80,7 +86,9 @@ if (pagerHtml) {
                     <h3>Weight: ${data.weight}</h3>
                 </div>
                 <h3>Abilities:</h3>
-                <ul>${abilitiesHtml}</ul>`;
+                <ul>${abilitiesHtml}</ul>
+                <h3>Cries:</h3>
+                <ul class="cries">${criesHtml}</ul>`;
 
                 const btnClose = document.querySelector('.btn-close');
                 btnClose.addEventListener('click', () => {
